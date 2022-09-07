@@ -105,7 +105,7 @@ instance:
       - settlingTime: 'kDAC_SettlingTimeIs1us'
     - enable_double_buffer: 'false'
     - buffer_value_input: '0'
-    - counter_value_input: '300'
+    - counter_value_input: '120'
     - enable_dma: 'false'
     - enable_counter: 'true'
     - enableInterrupt: 'true'

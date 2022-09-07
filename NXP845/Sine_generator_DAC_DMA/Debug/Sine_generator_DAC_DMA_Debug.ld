@@ -6,7 +6,7 @@
  * Generated linker script file for LPC845
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.5.0 [Build 7232] [2022-01-11] on 7 sep. 2022 13:01:19
+ * MCUXpresso IDE v11.5.0 [Build 7232] [2022-01-11] on 7 sep. 2022 19:48:57
  */
 
 INCLUDE "Sine_generator_DAC_DMA_Debug_library.ld"

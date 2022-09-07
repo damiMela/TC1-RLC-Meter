@@ -1,5 +1,5 @@
 /home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
-../OwnDrivers/sine_generator.c:38:6:sine_generator_init	8	static
-../OwnDrivers/sine_generator.c:44:6:sine_generator_send	16	static
-../OwnDrivers/sine_generator.c:49:6:sine_generator_freq	16	static
-../OwnDrivers/sine_generator.c:56:6:DAC0_IRQHandler	8	static
+../OwnDrivers/sine_generator.c:52:6:sine_generator_init	8	static
+../OwnDrivers/sine_generator.c:60:6:sine_generator_send	16	static
+../OwnDrivers/sine_generator.c:65:6:sine_generator_freq	16	static
+../OwnDrivers/sine_generator.c:72:6:DAC0_IRQHandler	8	static

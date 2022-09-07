@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../OwnDrivers/freq_boton.c \
 ../OwnDrivers/sine_generator.c 
 
 OBJS += \
+./OwnDrivers/freq_boton.o \
 ./OwnDrivers/sine_generator.o 
 
 C_DEPS += \
+./OwnDrivers/freq_boton.d \
 ./OwnDrivers/sine_generator.d 
 
 

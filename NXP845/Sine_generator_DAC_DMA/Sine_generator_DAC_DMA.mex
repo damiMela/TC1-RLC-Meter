@@ -596,7 +596,7 @@
                         </struct>
                         <setting name="enable_double_buffer" value="false"/>
                         <setting name="buffer_value_input" value="0"/>
-                        <setting name="counter_value_input" value="300"/>
+                        <setting name="counter_value_input" value="120"/>
                         <setting name="enable_dma" value="false"/>
                         <setting name="enable_counter" value="true"/>
                         <setting name="enableInterrupt" value="true"/>

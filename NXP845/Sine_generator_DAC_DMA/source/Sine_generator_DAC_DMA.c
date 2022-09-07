@@ -27,7 +27,6 @@ int main(void) {
     BOARD_InitDebugConsole();
 #endif
     sine_generator_init();
-    //sine_generator_freq(3);
 
     while(1) {
 
