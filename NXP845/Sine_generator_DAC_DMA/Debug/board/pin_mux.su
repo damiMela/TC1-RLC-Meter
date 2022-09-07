@@ -1,0 +1,11 @@
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_clock.h:569:20:CLOCK_DisableClock	16	static
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_iocon.h:102:22:IOCON_PinMuxSet	24	static
+../board/pin_mux.c:32:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:61:6:BOARD_InitPins	8	static
+../board/pin_mux.c:105:6:BOARD_InitLEDsPins	32	static
+../board/pin_mux.c:203:6:BOARD_InitDEBUG_UARTPins	16	static
+../board/pin_mux.c:273:6:BOARD_InitSWD_DEBUGPins	24	static
+../board/pin_mux.c:357:6:BOARD_InitBUTTONsPins	16	static
+../board/pin_mux.c:415:6:BOARD_InitCAPTPins	24	static
+../board/pin_mux.c:515:6:BOARD_InitDACPins	8	static
