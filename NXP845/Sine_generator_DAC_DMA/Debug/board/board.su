@@ -1,0 +1,2 @@
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_clock.h:580:20:CLOCK_Select	16	static
+../board/board.c:25:10:BOARD_InitDebugConsole	16	static

@@ -1,0 +1,6 @@
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_common_arm.h:499:24:EnableIRQ	24	static
+/home/juan/Documentos/UTN/TC1/Proyecto/LPC845/Sine_generator_DAC_DMA/drivers/fsl_dac.h:143:20:DAC_EnableCounter	16	static
+../board/peripherals.c:124:13:DAC0_init	8	static
+../board/peripherals.c:140:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:152:6:BOARD_InitBootPeripherals	8	static
