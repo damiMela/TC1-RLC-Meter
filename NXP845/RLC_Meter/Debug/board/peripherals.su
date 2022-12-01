@@ -1,0 +1,11 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_common_arm.h:499:24:EnableIRQ	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:453:20:ADC_EnableConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:708:20:ADC_EnableInterrupts	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:731:20:ADC_EnableThresholdCompareInterrupt	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_dac.h:143:20:DAC_EnableCounter	16	static
+../board/peripherals.c:165:13:ADC0_init	8	static
+../board/peripherals.c:228:13:USART0_init	8	static
+../board/peripherals.c:270:13:DAC0_init	8	static
+../board/peripherals.c:288:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:299:6:BOARD_InitBootPeripherals	8	static

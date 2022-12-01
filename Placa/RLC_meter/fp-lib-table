@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "RLC_meter")(type "KiCad")(uri "${KIPRJMOD}/RLC_meter.pretty")(options "")(descr ""))
+)

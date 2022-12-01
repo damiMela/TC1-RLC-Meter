@@ -1,0 +1,11 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_gpio.h:186:20:GPIO_PortSet	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_gpio.h:198:20:GPIO_PortClear	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_dac.h:143:20:DAC_EnableCounter	16	static
+../source/signalGenerator.c:16:6:SignalGen_setScale	24	static
+../source/signalGenerator.c:45:6:SignalGen_resetScale	16	static
+../source/signalGenerator.c:62:6:SignalGen_setFrec	16	static
+../source/signalGenerator.c:67:6:SignalGen_stop	8	static
+../source/signalGenerator.c:73:9:SignalGen_getCycleCount	8	static
+../source/signalGenerator.c:77:7:SignalGen_getCurrPhase	8	static
+../source/signalGenerator.c:81:6:SignalGen_run	32	static
+../source/signalGenerator.c:96:6:DAC0_IRQHandler	8	static

@@ -1,0 +1,7 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:478:20:ADC_DoSoftwareTriggerConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:751:24:ADC_GetStatusFlags	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:762:20:ADC_ClearStatusFlags	16	static
+../source/signalReader.c:7:6:SignalReader_updateReadings	8	static
+../source/signalReader.c:11:10:SignalReader_readSample	16	static
+../source/signalReader.c:15:6:SignalReader_sampleReady	8	static
+../source/signalReader.c:23:6:ADC0_SEQA_IRQHandler	40	static

@@ -1,0 +1,5 @@
+../source/globalTimer.c:14:6:SysTick_Handler	16	static
+../source/globalTimer.c:26:6:timer_setValue	16	static
+../source/globalTimer.c:31:6:timer_reset	16	static
+../source/globalTimer.c:35:6:timer_getStatus	16	static
+../source/globalTimer.c:43:6:delayMs	16	static

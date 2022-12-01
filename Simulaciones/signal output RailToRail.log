@@ -1,21 +1,49 @@
 Circuit: * E:\$GIT\TC1-RLC-Meter\Simulaciones\signal output RailToRail.asc
 
-Direct Newton iteration for .op point succeeded.
+WARNING: Less than two connections to node 3.3V.  This node is used by V4.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 0.995033
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 0.999816
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
 
-Date: Thu Sep 15 17:41:31 2022
-Total elapsed time: 1.024 seconds.
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Thu Dec 01 15:16:17 2022
+Total elapsed time: 5.411 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 318989
-traniter = 318985
-tranpoints = 153124
-accept = 110569
-rejected = 42555
-matrix size = 13
-fillins = 5
+totiter = 978832
+traniter = 976798
+tranpoints = 324937
+accept = 240134
+rejected = 84803
+matrix size = 26
+fillins = 27
 solver = Normal
-Matrix Compiler1: 790 bytes object code size  0.2/0.1/[0.1]
-Matrix Compiler2: 1.24 KB object code size  0.1/0.1/[0.1]
+Thread vector: 6.5/4.7[2] 1.3/2.9[1] 1.8/1.8[1] 0.1/1.0[1]  2592/500
+Matrix Compiler1: 2.40 KB object code size  0.9/0.4/[0.1]
+Matrix Compiler2: 2.96 KB object code size  0.3/0.4/[0.2]
 
