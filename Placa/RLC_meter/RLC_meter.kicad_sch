@@ -2503,7 +2503,7 @@
     (property "Reference" "R6" (id 0) (at 95.885 99.695 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "560" (id 1) (at 97.79 97.79 90)
+    (property "Value" "33" (id 1) (at 97.79 97.79 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" (id 2) (at 102.108 99.06 90)
@@ -2711,7 +2711,7 @@
       (reference "R5") (unit 1) (value "560") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal")
     )
     (path "/e1ec8ca0-d2aa-4a0d-b05b-78b7b8e4e859"
-      (reference "R6") (unit 1) (value "560") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal")
+      (reference "R6") (unit 1) (value "33") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal")
     )
     (path "/8043014b-f53c-43be-b39f-70fd6c5f044a"
       (reference "RV1") (unit 1) (value "50k") (footprint "Potentiometer_THT:Potentiometer_Bourns_3386C_Horizontal")

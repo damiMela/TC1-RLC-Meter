@@ -143,6 +143,7 @@ int main(void) {
 
 		case MEASURE:
 			if(SignalGen_getCycleCount() < 2){
+				SignalGen_run();
 				signalCurrVal[0] = SignalReader_readSample(SIGNAL1);
 				signalCurrVal[1] = SignalReader_readSample(SIGNAL2);
 				if(signalMaxVal[0] < signalCurrVal[0]){
