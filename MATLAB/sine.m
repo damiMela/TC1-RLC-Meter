@@ -4,7 +4,7 @@ clc;
 
 %1Hz - 20kHz
 frec = 1000;
-puntos = 49;
+puntos = 100;
 
 fro = 30e6; %DAC clock
 timeStep = 1 / (frec*puntos);
@@ -21,4 +21,4 @@ plot(N*timeStep,y, "-o");
 %for LT spice
 plw_t = [0, timeStep+zeros(1,puntos-1)].';
 M = [plw_t, y.'];
-dlmwrite('sin.txt',M,'precision','+%.10f','delimiter','\t');
+dlmwrite('sin_spice.txt',M,'precision','+%.10f','delimiter','\t');

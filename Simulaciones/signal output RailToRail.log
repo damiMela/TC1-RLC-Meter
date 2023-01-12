@@ -1,4 +1,4 @@
-Circuit: * C:\Damian\TC1-RLC-Meter\Simulaciones\signal output RailToRail.asc
+Circuit: * E:\$GIT\TC1-RLC-Meter\Simulaciones\signal output RailToRail.asc
 
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -28,21 +28,21 @@ Source Step = 93.9394%
 Source stepping succeeded in finding the operating point.
 
 
-Date: Thu Dec 01 19:24:30 2022
-Total elapsed time: 4.671 seconds.
+Date: Wed Jan 11 22:41:25 2023
+Total elapsed time: 5.630 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 963087
-traniter = 961053
-tranpoints = 289468
-accept = 215422
-rejected = 74046
+totiter = 973091
+traniter = 971057
+tranpoints = 320533
+accept = 238086
+rejected = 82447
 matrix size = 24
 fillins = 36
 solver = Normal
-Thread vector: 16.3/6.8[2] 1.1/1.1[1] 2.4/1.6[2] 0.2/3.4[1]  2592/500
+Thread vector: 6.3/4.9[2] 1.2/1.7[1] 1.7/1.7[1] 0.1/1.2[1]  2592/500
 Matrix Compiler1: 2.95 KB object code size  0.5/0.3/[0.1]
-Matrix Compiler2: 3.00 KB object code size  0.3/0.4/[0.2]
+Matrix Compiler2: 3.00 KB object code size  0.3/0.3/[0.2]
 
