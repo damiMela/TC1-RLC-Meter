@@ -1,4 +1,5 @@
 source/RLC_Meter.o source/RLC_Meter.d: ../source/RLC_Meter.c \
+ C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalReader.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/board.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/clock_config.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_common.h \
@@ -15,6 +16,7 @@ source/RLC_Meter.o source/RLC_Meter.d: ../source/RLC_Meter.c \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_common.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_reset.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_gpio.h \
+ C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/sineGenerator.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/peripherals.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_usart.h \
@@ -24,13 +26,9 @@ source/RLC_Meter.o source/RLC_Meter.d: ../source/RLC_Meter.c \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/clock_config.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\device/LPC845.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\utilities/fsl_debug_console.h \
- C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_power.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/globalTimer.h \
- C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalReader.h \
- C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/globalTimer.h \
- C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalGenerator.h \
- C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_ctimer.h \
  C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/UartComm.h
+C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalReader.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/board.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/clock_config.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_common.h:
@@ -47,6 +45,7 @@ C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\d
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_common.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_reset.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_gpio.h:
+C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/sineGenerator.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/peripherals.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_adc.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_usart.h:
@@ -56,10 +55,5 @@ C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\b
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\board/clock_config.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\device/LPC845.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\utilities/fsl_debug_console.h:
-C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_power.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/globalTimer.h:
-C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalReader.h:
-C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/globalTimer.h:
-C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/signalGenerator.h:
-C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_ctimer.h:
 C:\Users\Damian\ -\ PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\inc/UartComm.h:

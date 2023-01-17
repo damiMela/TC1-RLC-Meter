@@ -8,21 +8,34 @@
 #ifndef SIGNALREADER_H_
 #define SIGNALREADER_H_
 
-#include "fsl_adc.h"
-#include "peripherals.h"
-#include "globalTimer.h"
+#include "board.h"
+
 typedef enum{
 	SIGNAL1,
 	SIGNAL2,
 	_TOTAL_SIGNALS
 } signal_n;
 
-#define SINGAL_SAMPLES_PER_SECOND 100
+
+#define POT_VALUE			10000
+#define POT_STEP			100
+#define POT_TOTAL_STEPS		POT_VALUE/POT_STEP
+#define ADC_MAX_VAL			3000
+
+
+void signalReader_init();
+void signalReader_stop();
+
+void signalReader_update();
+bool signalReader_sampleReady();
+uint32_t signalReader_readSample(signal_n signal);
+uint32_t signalReader_read(uint16_t *s1, uint16_t *s2, uint16_t len);
+
+void signalReader_setScale(uint8_t scale);
+void signalReader_resetScale();
+void signalReader_incrementScale(bool up);
+uint16_t signalReader_getCurrentScale();
 
 void ADC0_ADC_SEQ_A_IRQHANDLER (void);
-void SignalReader_updateReadings();
-bool SignalReader_sampleReady();
-uint32_t SignalReader_readSample(signal_n signal);
-uint32_t SignalReader_read(uint16_t *s1, uint16_t *s2, uint16_t len);
 
 #endif /* SIGNALREADER_H_ */

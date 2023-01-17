@@ -9,8 +9,8 @@ C_SRCS += \
 ../source/globalTimer.c \
 ../source/mtb.c \
 ../source/semihost_hardfault.c \
-../source/signalGenerator.c \
-../source/signalReader.c 
+../source/signalReader.c \
+../source/sineGenerator.c 
 
 C_DEPS += \
 ./source/RLC_Meter.d \
@@ -18,8 +18,8 @@ C_DEPS += \
 ./source/globalTimer.d \
 ./source/mtb.d \
 ./source/semihost_hardfault.d \
-./source/signalGenerator.d \
-./source/signalReader.d 
+./source/signalReader.d \
+./source/sineGenerator.d 
 
 OBJS += \
 ./source/RLC_Meter.o \
@@ -27,8 +27,8 @@ OBJS += \
 ./source/globalTimer.o \
 ./source/mtb.o \
 ./source/semihost_hardfault.o \
-./source/signalGenerator.o \
-./source/signalReader.o 
+./source/signalReader.o \
+./source/sineGenerator.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -43,7 +43,7 @@ source/%.o: ../source/%.c source/subdir.mk
 clean: clean-source
 
 clean-source:
-	-$(RM) ./source/RLC_Meter.d ./source/RLC_Meter.o ./source/UartComm.d ./source/UartComm.o ./source/globalTimer.d ./source/globalTimer.o ./source/mtb.d ./source/mtb.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/signalGenerator.d ./source/signalGenerator.o ./source/signalReader.d ./source/signalReader.o
+	-$(RM) ./source/RLC_Meter.d ./source/RLC_Meter.o ./source/UartComm.d ./source/UartComm.o ./source/globalTimer.d ./source/globalTimer.o ./source/mtb.d ./source/mtb.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o ./source/signalReader.d ./source/signalReader.o ./source/sineGenerator.d ./source/sineGenerator.o
 
 .PHONY: clean-source
 

@@ -1,8 +1,8 @@
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_clock.h:558:20:CLOCK_EnableClock	16	static
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_clock.h:569:20:CLOCK_DisableClock	16	static
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_iocon.h:102:22:IOCON_PinMuxSet	24	static
-../board/pin_mux.c:39:6:BOARD_InitBootPins	8	static
-../board/pin_mux.c:72:6:BOARD_InitPins	24	static
+../board/pin_mux.c:40:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:73:6:BOARD_InitPins	24	static
 ../board/pin_mux.c:161:6:BOARD_InitLEDsPins	32	static
 ../board/pin_mux.c:259:6:BOARD_InitDEBUG_UARTPins	16	static
 ../board/pin_mux.c:329:6:BOARD_InitSWD_DEBUGPins	24	static

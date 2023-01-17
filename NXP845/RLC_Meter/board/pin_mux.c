@@ -15,6 +15,7 @@ processor_version: 12.0.0
 board: LPC845BREAKOUT
 pin_labels:
 - {pin_num: '2', pin_signal: PIO0_13/ADC_10, label: 'CN1[26]/PIO0_13/ADC_10', identifier: POT_UD;POT_INC}
+- {pin_num: '12', pin_signal: PIO0_11/I2C0_SDA, label: 'CN1[24]/PIO0_11/I2C0_SDA', identifier: POT_CS}
 - {pin_num: '21', pin_signal: PIO1_3/CAPT_X4, label: PIO1_3/CAPT_X4, identifier: POT_CS;POT_CS_}
 - {pin_num: '22', pin_signal: PIO0_15, label: 'CN1[28]/PIO0_15', identifier: POT_CS}
 - {pin_num: '23', pin_signal: PIO1_4/CAPT_X5, label: PIO1_4/CAPT_X5, identifier: POT_INC;POT_INC_}
@@ -55,9 +56,9 @@ BOARD_InitPins:
   - {pin_num: '33', peripheral: ADC0, signal: 'CH, 0', pin_signal: PIO0_7/ADC_0}
   - {pin_num: '34', peripheral: ADC0, signal: 'CH, 1', pin_signal: PIO0_6/ADC_1/ACMPVREF}
   - {pin_num: '48', peripheral: DAC0, signal: DACOUT0, pin_signal: PIO0_17/ADC_9/DACOUT_0, dacmode: enabled}
-  - {pin_num: '22', peripheral: GPIO, signal: 'PIO0, 15', pin_signal: PIO0_15, direction: OUTPUT, gpio_init_state: 'true', mode: pullUp}
   - {pin_num: '37', peripheral: GPIO, signal: 'PIO0, 14', pin_signal: PIO0_14/ACMP_I3/ADC_2, identifier: POT_UD, direction: OUTPUT, gpio_init_state: 'true'}
   - {pin_num: '2', peripheral: GPIO, signal: 'PIO0, 13', pin_signal: PIO0_13/ADC_10, identifier: POT_INC, direction: OUTPUT, mode: pullDown}
+  - {pin_num: '12', peripheral: GPIO, signal: 'PIO0, 11', pin_signal: PIO0_11/I2C0_SDA, direction: OUTPUT, gpio_init_state: 'true', invert: disabled, i2cmode: no_init}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -78,6 +79,13 @@ void BOARD_InitPins(void)
     /* Enables the clock for the GPIO0 module */
     CLOCK_EnableClock(kCLOCK_Gpio0);
 
+    gpio_pin_config_t POT_CS_config = {
+        .pinDirection = kGPIO_DigitalOutput,
+        .outputLogic = 1U,
+    };
+    /* Initialize GPIO functionality on pin PIO0_11 (pin 12)  */
+    GPIO_PinInit(BOARD_INITPINS_POT_CS_GPIO, BOARD_INITPINS_POT_CS_PORT, BOARD_INITPINS_POT_CS_PIN, &POT_CS_config);
+
     gpio_pin_config_t POT_INC_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 0U,
@@ -92,12 +100,12 @@ void BOARD_InitPins(void)
     /* Initialize GPIO functionality on pin PIO0_14 (pin 37)  */
     GPIO_PinInit(BOARD_INITPINS_POT_UD_GPIO, BOARD_INITPINS_POT_UD_PORT, BOARD_INITPINS_POT_UD_PIN, &POT_UD_config);
 
-    gpio_pin_config_t POT_CS_config = {
-        .pinDirection = kGPIO_DigitalOutput,
-        .outputLogic = 1U,
-    };
-    /* Initialize GPIO functionality on pin PIO0_15 (pin 22)  */
-    GPIO_PinInit(BOARD_INITPINS_POT_CS_GPIO, BOARD_INITPINS_POT_CS_PORT, BOARD_INITPINS_POT_CS_PIN, &POT_CS_config);
+    IOCON->PIO[7] = ((IOCON->PIO[7] &
+                      /* Mask bits to zero which are setting */
+                      (~(IOCON_PIO_INV_MASK)))
+
+                     /* Invert input: Input not inverted (HIGH on pin reads as 1; LOW on pin reads as 0). */
+                     | IOCON_PIO_INV(PIO0_11_INV_NOT_INVERTED));
 
     IOCON->PIO[1] = ((IOCON->PIO[1] &
                       /* Mask bits to zero which are setting */
@@ -106,14 +114,6 @@ void BOARD_InitPins(void)
                      /* Selects function mode (on-chip pull-up/pull-down resistor control).: Pull-down. Pull-down
                       * resistor enabled. */
                      | IOCON_PIO_MODE(PIO0_13_MODE_PULL_DOWN));
-
-    IOCON->PIO[10] = ((IOCON->PIO[10] &
-                       /* Mask bits to zero which are setting */
-                       (~(IOCON_PIO_MODE_MASK)))
-
-                      /* Selects function mode (on-chip pull-up/pull-down resistor control).: Pull-up. Pull-up resistor
-                       * enabled. */
-                      | IOCON_PIO_MODE(PIO0_15_MODE_PULL_UP));
 
     IOCON->PIO[0] = ((IOCON->PIO[0] &
                       /* Mask bits to zero which are setting */

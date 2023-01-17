@@ -2,11 +2,11 @@
  * GENERATED FILE - DO NOT EDIT
  * Copyright (c) 2008-2013 Code Red Technologies Ltd,
  * Copyright 2015, 2018-2019 NXP
- * (c) NXP Semiconductors 2013-2022
+ * (c) NXP Semiconductors 2013-2023
  * Generated linker script file for LPC845
  * Created from library.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 1 dic. 2022 13:39:46
+ * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 15 ene. 2023 17:04:01
  */
 
 GROUP (

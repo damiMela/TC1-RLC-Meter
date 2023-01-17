@@ -11,15 +11,17 @@
 #include "board.h"
 #include "peripherals.h"
 
-#define UART0 				USART0_PERIPHERAL
-#define UART_CMD_INIT_CHAR  '$'
-#define UART_CMD_END_CHAR   '@'
-#define UART_CMD_LEN		5
+enum{
+	NO_CMD,
+	START_CMD
+};
+
+#define UART0 				 USART0_PERIPHERAL
+#define START_CMD_CHAR			'S'
 
 bool UartComm_available();
 bool UartComm_cmdDetected();
-void UartComm_readCmd(char* cmd);
-bool UartComm_readValue(uint16_t *result);
-uint16_t UartComm_parseFreq(char *cmd);
+uint8_t UartComm_readCmd();
+void UartComm_write(uint8_t *txt, uint8_t len);
 
 #endif /* UARTCOMM_H_ */

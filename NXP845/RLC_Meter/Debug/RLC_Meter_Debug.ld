@@ -2,11 +2,11 @@
  * GENERATED FILE - DO NOT EDIT
  * Copyright (c) 2008-2013 Code Red Technologies Ltd,
  * Copyright 2015, 2018-2019 NXP
- * (c) NXP Semiconductors 2013-2022
+ * (c) NXP Semiconductors 2013-2023
  * Generated linker script file for LPC845
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 1 dic. 2022 13:39:46
+ * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 15 ene. 2023 17:04:01
  */
 
 INCLUDE "RLC_Meter_Debug_library.ld"
@@ -45,7 +45,7 @@ SECTIONS
         *(.after_vectors*)
 
         /* Code Read Protection data */
-        . = 0x2fc ;
+        . = 0x000002FC ;
         PROVIDE(__CRP_WORD_START__ = .) ;
         KEEP(*(.crp))
         PROVIDE(__CRP_WORD_END__ = .) ;
@@ -54,6 +54,22 @@ SECTIONS
        *(.text*)
        *(.rodata .rodata.* .constdata .constdata.*)
        . = ALIGN(4);
+    } > PROGRAM_FLASH
+
+    /*
+     * for exception handling/unwind - some Newlib functions (in common
+     * with C++ and STDC++) use this.
+     */
+    .ARM.extab : ALIGN(4)
+    {
+        *(.ARM.extab* .gnu.linkonce.armextab.*)
+    } > PROGRAM_FLASH
+
+    .ARM.exidx : ALIGN(4)
+    {
+        __exidx_start = .;
+        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+        __exidx_end = .;
     } > PROGRAM_FLASH
  
     _etext = .;
@@ -172,45 +188,9 @@ SECTIONS
        PROVIDE(__end_noinit_SRAM = .) ;        
     } > SRAM AT> SRAM
 
-    /*
-     * for exception handling/unwind - some Newlib functions (in common
-     * with C++ and STDC++) use this.
-     */
-    .ARM.extab : ALIGN(4)
-    {
-        *(.ARM.extab* .gnu.linkonce.armextab.*)
-    } > PROGRAM_FLASH
+    PROVIDE(_pvHeapStart = DEFINED(__user_heap_base) ? __user_heap_base : .);
 
-    .ARM.exidx : ALIGN(4)
-    {
-        __exidx_start = .;
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-        __exidx_end = .;
-    } > PROGRAM_FLASH
-
-    /* Reserve and place Heap within memory map */
-    _HeapSize = 0x3f8;
-    .heap :  ALIGN(4)
-    {
-        _pvHeapStart = .;
-        . += _HeapSize;
-        . = ALIGN(4);
-        _pvHeapLimit = .;
-    } > SRAM
-
-     _StackSize = 0x3f8;
-     /* Reserve space in memory for Stack */
-    .heap2stackfill  :
-    {
-        . += _StackSize;
-    } > SRAM
-    /* Locate actual Stack in memory map */
-    .stack ORIGIN(SRAM) + LENGTH(SRAM) - _StackSize - 0:  ALIGN(4)
-    {
-        _vStackBase = .;
-        . = ALIGN(4);
-        _vStackTop = . + _StackSize;
-    } > SRAM
+    PROVIDE(_vStackTop = DEFINED(__user_stack_top) ? __user_stack_top : __top_SRAM - 0);
 
     /* ## Create checksum value (used in startup) ## */
     PROVIDE(__valid_user_code_checksum = 0 - 

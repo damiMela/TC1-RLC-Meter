@@ -8,7 +8,6 @@
 #ifndef HEADERS_GLOBALTIMERS_H_
 #define HEADERS_GLOBALTIMERS_H_
 
-
 #include "board.h"
 
 typedef enum _timer_n{

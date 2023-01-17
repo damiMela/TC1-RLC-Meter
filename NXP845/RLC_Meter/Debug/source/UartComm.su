@@ -1,8 +1,5 @@
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_usart.h:361:24:USART_GetStatusFlags	16	static
-C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_usart.h:573:23:USART_ReadByte	16	static
 ../source/UartComm.c:13:6:UartComm_available	8	static
 ../source/UartComm.c:17:6:UartComm_cmdDetected	16	static
-../source/UartComm.c:28:6:UartComm_readCmd	16	static
-../source/UartComm.c:32:6:UartComm_readValue	40	static
-../source/UartComm.c:52:10:UartComm_parseFreq	32	static
-../source/UartComm.c:65:6:UartComm_write	16	static
+../source/UartComm.c:31:9:UartComm_readCmd	8	static
+../source/UartComm.c:35:6:UartComm_write	16	static

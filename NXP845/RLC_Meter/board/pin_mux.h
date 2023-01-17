@@ -26,6 +26,9 @@ extern "C" {
 void BOARD_InitBootPins(void);
 
 /*!
+ * @brief Invert input: Input not inverted (HIGH on pin reads as 1; LOW on pin reads as 0). */
+#define PIO0_11_INV_NOT_INVERTED 0x00u
+/*!
  * @brief
  * Selects function mode (on-chip pull-up/pull-down resistor control).
  * : Pull-down.
@@ -33,22 +36,8 @@ void BOARD_InitBootPins(void);
  */
 #define PIO0_13_MODE_PULL_DOWN 0x01u
 /*!
- * @brief Selects function mode (on-chip pull-up/pull-down resistor control).: Pull-up. Pull-up resistor enabled. */
-#define PIO0_15_MODE_PULL_UP 0x02u
-/*!
  * @brief DAC mode enable.: Enable. */
 #define PIO0_17_DACMODE_ENABLE 0x01u
-
-/*! @name PIO0_15 (number 22), CN1[28]/PIO0_15
-  @{ */
-
-/* Symbols to be used with GPIO driver */
-#define BOARD_INITPINS_POT_CS_GPIO GPIO                 /*!<@brief GPIO peripheral base pointer */
-#define BOARD_INITPINS_POT_CS_GPIO_PIN_MASK (1U << 15U) /*!<@brief GPIO pin mask */
-#define BOARD_INITPINS_POT_CS_PORT 0U                   /*!<@brief PORT device index: 0 */
-#define BOARD_INITPINS_POT_CS_PIN 15U                   /*!<@brief PORT pin number */
-#define BOARD_INITPINS_POT_CS_PIN_MASK (1U << 15U)      /*!<@brief PORT pin mask */
-                                                        /* @} */
 
 /*! @name PIO0_14 (number 37), CN1[27]/PIO0_14/ACMP_I3/ADC_2
   @{ */
@@ -71,6 +60,17 @@ void BOARD_InitBootPins(void);
 #define BOARD_INITPINS_POT_INC_PIN 13U                   /*!<@brief PORT pin number */
 #define BOARD_INITPINS_POT_INC_PIN_MASK (1U << 13U)      /*!<@brief PORT pin mask */
                                                          /* @} */
+
+/*! @name PIO0_11 (number 12), CN1[24]/PIO0_11/I2C0_SDA
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_INITPINS_POT_CS_GPIO GPIO                 /*!<@brief GPIO peripheral base pointer */
+#define BOARD_INITPINS_POT_CS_GPIO_PIN_MASK (1U << 11U) /*!<@brief GPIO pin mask */
+#define BOARD_INITPINS_POT_CS_PORT 0U                   /*!<@brief PORT device index: 0 */
+#define BOARD_INITPINS_POT_CS_PIN 11U                   /*!<@brief PORT pin number */
+#define BOARD_INITPINS_POT_CS_PIN_MASK (1U << 11U)      /*!<@brief PORT pin mask */
+                                                        /* @} */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features.

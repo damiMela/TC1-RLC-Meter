@@ -42,7 +42,7 @@ extern "C" {
 /* Definition of DAC output value. */
 #define DAC0_BUFFER_VALUE 0
 /* Definition of DAC counter value. */
-#define DAC0_COUNTER_VALUE 0
+#define DAC0_COUNTER_VALUE 30000
 /* DAC0 interrupt vector ID (number). */
 #define DAC0_IRQN DAC0_IRQn
 /* DAC0 interrupt handler identifier. */

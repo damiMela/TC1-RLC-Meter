@@ -32,6 +32,8 @@
  * @file    RLC_Meter.c
  * @brief   Application entry point.
  */
+#include <signalReader.h>
+#include <sineGenerator.h>
 #include <stdio.h>
 #include "string.h"
 #include "math.h"
@@ -42,11 +44,8 @@
 #include "clock_config.h"
 #include "LPC845.h"
 #include "fsl_debug_console.h"
-#include "fsl_power.h"
 
 #include "globalTimer.h"
-#include "signalReader.h"
-#include "signalGenerator.h"
 #include "UartComm.h"
 
 #define BOARD_LED_PORT BOARD_INITLEDSPINS_LED_GREEN_PORT
@@ -71,38 +70,38 @@ typedef enum _state{
  */
 int main(void) {
 
+	#ifndef BOARD_INIT_DEBUG_CONSOLE_PERIPHERAL
+    /* Init FSL debug console. */
+    BOARD_InitDebugConsole();
+#endif
+
+
     /* Init board hardware. */
     BOARD_InitBootPins();
     BOARD_InitBootClocks();
     BOARD_InitBootPeripherals();
 
-#ifndef BOARD_INIT_DEBUG_CONSOLE_PERIPHERAL
-    /* Init FSL debug console. */
-    BOARD_InitDebugConsole();
-#endif
-
-    POWER_DisablePD(kPDRUNCFG_PD_ADC0);
-    POWER_DisablePD(kPDRUNCFG_PD_DAC0);
     SysTick_Config(SystemCoreClock / (1000-1));
+	timer_setValue(LED_TIMER, 1000);
+	signalReader_init();
 
 
     /* Program variables */
    state s = INIT;
-   char uartCmd[UART_CMD_LEN] = {0};
+   float realVal = 0, imgVal = 0, module = 0;
+
+   char uartCmd = 0;
+   char outputText[50] = {0};
 
    uint16_t signalMaxVal[2] = {0};
    uint16_t signalCurrVal[2] = {0};
    uint8_t 	signalMaxValPhase = 0;
 
-   float realVal = 0, imgVal = 0, module = 0;
-   char outputText[15] = "";
 
-   timer_setValue(LED_TIMER, 1000);
 
     /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
-    	SignalReader_updateReadings();
-    	SignalGen_run();
+    	signalReader_update();
 
     	//toggle led while working
 		if(timer_getStatus(LED_TIMER)){
@@ -110,29 +109,28 @@ int main(void) {
 		}
 
 		if(UartComm_cmdDetected()){
-			UartComm_readCmd(uartCmd);
+			uartCmd = UartComm_readCmd(uartCmd);
 		}
 
 
 		switch(s){
 		case INIT:
 			timer_reset(LED_TIMER); //keep LED off while initiating
-			SignalGen_resetScale();
-			SignalGen_stop();
+			//SignalGen_resetScale();
+			sineGenerator_stop();
+			sineGenerator_freq(1000);
 			s = STANDBY;
 			break;
 
 		case STANDBY:
-			if(strstr(uartCmd, "START") != NULL){
-				uartCmd[0] = 0;
+			if(uartCmd == START_CMD){
+				uartCmd = 0;
+				sineGenerator_init();
+				sineGenerator_resetCycleCount();
 				s = MEASURE;
 			}
-			if(strstr(uartCmd, "CFREQ") != NULL){
-				uartCmd[0] = 0;
-				s = CHANGE_FREQ;
-			}
 			break;
-
+/*
 		case CHANGE_FREQ:
 			if(uartCmd[0] != 0){
 				SignalGen_setFrec(atoi(uartCmd));
@@ -140,32 +138,45 @@ int main(void) {
 				s = STANDBY;
 			}
 			break;
-
+*/
 		case MEASURE:
-			if(SignalGen_getCycleCount() < 2){
-				SignalGen_run();
-				signalCurrVal[0] = SignalReader_readSample(SIGNAL1);
-				signalCurrVal[1] = SignalReader_readSample(SIGNAL2);
+			if(sineGenerator_getCycleCount() < 20){
+				signalCurrVal[0] = signalReader_readSample(SIGNAL1);
+				signalCurrVal[1] = signalReader_readSample(SIGNAL2);
+
 				if(signalMaxVal[0] < signalCurrVal[0]){
 					signalMaxVal[0]= signalCurrVal[0];
-					signalMaxValPhase = SignalGen_getCurrPhase();
 				}
-				if(signalMaxVal[1] < signalCurrVal[1])
+				if(signalMaxVal[1] < signalCurrVal[1]){
 					signalMaxVal[1]= signalCurrVal[1];
+					signalMaxValPhase = sineGenerator_getPhase();
+				}
 			}
 			else{
-				SignalGen_stop();
-				s = PROCESS;
+				sineGenerator_stop();
+				if(signalMaxVal[1] < ADC_MAX_VAL){
+					signalReader_incrementScale(true);
+					sineGenerator_init();
+					sineGenerator_resetCycleCount();
+				}
+				else{
+					signalReader_resetScale();
+					s = PROCESS;
+				}
 			}
 			break;
 
 		case PROCESS:
-			module = abs((signalMaxVal[0]- (signalMaxVal[1])/SignalGen_getDivisor()))/CURRENT_RES;
+			module = abs((signalMaxVal[0]- (signalMaxVal[1])/signalReader_getCurrentScale()))/CURRENT_RES;
 			realVal = module * cosf(signalMaxValPhase);
 			imgVal = module * sinf(signalMaxValPhase);
 
-
 			sprintf(outputText, "Z = %d+j%d",realVal, imgVal);
+
+			signalMaxVal[0]= 0;
+			signalMaxVal[1]= 0;
+			signalMaxValPhase = 0;
+			s = STANDBY;
 			break;
 		default:
 			break;

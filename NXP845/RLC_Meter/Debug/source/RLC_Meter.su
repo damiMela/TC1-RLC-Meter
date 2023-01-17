@@ -1,5 +1,4 @@
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\CMSIS/core_cm0plus.h:850:22:__NVIC_SetPriority	24	static
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\CMSIS/core_cm0plus.h:1058:26:SysTick_Config	16	static
 C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_gpio.h:210:20:GPIO_PortToggle	24	static
-C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_Meter\drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
-../source/RLC_Meter.c:69:5:main	80	static
+../source/RLC_Meter.c:71:5:main	112	static
