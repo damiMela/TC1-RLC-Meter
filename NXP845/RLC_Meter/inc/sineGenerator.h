@@ -15,9 +15,10 @@
 #endif
 
 
-#define DAC_HALF_VALUE	512
-#define SINE_AMPLITUDE	480
-#define SINE_RESOLUTION	100
+#define DAC_HALF_VALUE	512U
+#define SINE_AMPLITUDE	480U
+#define SINE_RESOLUTION	5
+
 #define SECONDS_TO_DAC_VAL(x)	(int)(1000000*x*30)
 
 #define  SCALE_RES_VAL 33

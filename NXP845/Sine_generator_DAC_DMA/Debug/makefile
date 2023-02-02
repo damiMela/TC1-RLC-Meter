@@ -16,7 +16,6 @@ RM := rm -rf
 -include component/uart/subdir.mk
 -include board/subdir.mk
 -include OwnDrivers/subdir.mk
--include subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -57,7 +56,7 @@ Sine_generator_DAC_DMA.axf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_
 
 # Other Targets
 clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) Sine_generator_DAC_DMA.axf
+	-$(RM) Sine_generator_DAC_DMA.axf
 	-@echo ' '
 
 post-build:
@@ -65,6 +64,6 @@ post-build:
 	-arm-none-eabi-size "Sine_generator_DAC_DMA.axf"; # arm-none-eabi-objcopy -v -O binary "Sine_generator_DAC_DMA.axf" "Sine_generator_DAC_DMA.bin" ; # checksum -p LPC845 -d "Sine_generator_DAC_DMA.bin";
 	-@echo ' '
 
-.PHONY: all clean dependents post-build
+.PHONY: all clean dependents main-build post-build
 
 -include ../makefile.targets

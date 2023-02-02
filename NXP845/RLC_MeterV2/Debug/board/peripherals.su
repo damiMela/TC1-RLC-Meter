@@ -1,0 +1,15 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_common_arm.h:499:24:EnableIRQ	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_dma.h:420:20:DMA_EnableChannel	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_dma.h:446:20:DMA_EnableChannelPeriphRq	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:453:20:ADC_EnableConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:708:20:ADC_EnableInterrupts	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:731:20:ADC_EnableThresholdCompareInterrupt	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_dac.h:124:20:DAC_EnableDMA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_dac.h:143:20:DAC_EnableCounter	16	static
+../board/peripherals.c:134:13:DMA0_init	8	static
+../board/peripherals.c:256:13:ADC0_init	8	static
+../board/peripherals.c:321:13:USART0_init	8	static
+../board/peripherals.c:363:13:DAC0_init	8	static
+../board/peripherals.c:381:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:396:6:BOARD_InitBootPeripherals	8	static

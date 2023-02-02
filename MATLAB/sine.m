@@ -3,22 +3,28 @@ clear;
 clc;
 
 %1Hz - 20kHz
-frec = 1000;
-puntos = 100;
+f = 1000;
+N = 100;
+
+A_v = 1.5; Of_v = 1.65;
+A_d = 500; Of_d = 512;
 
 fro = 30e6; %DAC clock
-timeStep = 1 / (frec*puntos);
-periodo = 1/frec;
+timeStep = 1 / (f*N);
+T = 1/f;
+phase = pi/5; 
 
-N = 0 : puntos-1;
-w = 2*pi*frec;
-y = 1.65 + 1.5*sin(w*N*timeStep);
-csvwrite('sin.txt',y);
+n = 0 : N-1;
+w = 2*pi*f;
+y = Of_d + A_d*sin(w*n*timeStep + phase);
+csvwrite('sin.txt',round(y*(2^6)));
+
+y = Of_v + A_v*sin(w*n*timeStep + phase);
 
 figure;
-plot(N*timeStep,y, "-o");
+plot(n*timeStep,y, "-o");
 
 %for LT spice
-plw_t = [0, timeStep+zeros(1,puntos-1)].';
+plw_t = [0, timeStep+zeros(1,N-1)].';
 M = [plw_t, y.'];
 dlmwrite('sin_spice.txt',M,'precision','+%.10f','delimiter','\t');

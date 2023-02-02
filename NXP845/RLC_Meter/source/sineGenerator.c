@@ -40,7 +40,7 @@ static int frec = 0;
 			415,447,480,512
 	};
 #else
-	static const uint16_t SinusOutputData[SINE_RESOLUTION]={0};
+	static const uint16_t SinusOutputData[5]={512,512,512,512,512};
 #endif
 
 
@@ -85,11 +85,11 @@ void sineGenerator_resetCycleCount(){
 
 /* DAC0_IRQn interrupt handler */
 void DAC0_IRQHandler(void) {
-	int n = 65;
+	int n = 0;
 
 	if(index <(SINE_RESOLUTION-n))	sineGenerator_send(SinusOutputData[index+n]);
 	else	sineGenerator_send(SinusOutputData[index-(SINE_RESOLUTION-n)]);
-	//sineGenerator_send(SinusOutputData[index]);
+
 	index++;
 
 	if (index == SINE_RESOLUTION){

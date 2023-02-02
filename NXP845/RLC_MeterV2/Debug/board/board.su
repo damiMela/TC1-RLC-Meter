@@ -1,0 +1,2 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_clock.h:580:20:CLOCK_Select	16	static
+../board/board.c:25:10:BOARD_InitDebugConsole	16	static

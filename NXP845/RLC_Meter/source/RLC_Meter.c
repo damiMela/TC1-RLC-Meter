@@ -98,8 +98,6 @@ int main(void) {
    uint8_t 	signalMaxValPhase = 0;
 
 
-
-    /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
     	signalReader_update();
 
@@ -116,7 +114,7 @@ int main(void) {
 		switch(s){
 		case INIT:
 			timer_reset(LED_TIMER); //keep LED off while initiating
-			//SignalGen_resetScale();
+			signalReader_resetScale();
 			sineGenerator_stop();
 			sineGenerator_freq(1000);
 			s = STANDBY;
@@ -127,7 +125,7 @@ int main(void) {
 				uartCmd = 0;
 				sineGenerator_init();
 				sineGenerator_resetCycleCount();
-				s = MEASURE;
+				//s = MEASURE;
 			}
 			break;
 /*
@@ -183,5 +181,6 @@ int main(void) {
 		}
 
     }
+
     return 0 ;
 }

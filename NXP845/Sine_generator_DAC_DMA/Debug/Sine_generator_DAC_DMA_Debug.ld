@@ -2,11 +2,11 @@
  * GENERATED FILE - DO NOT EDIT
  * Copyright (c) 2008-2013 Code Red Technologies Ltd,
  * Copyright 2015, 2018-2019 NXP
- * (c) NXP Semiconductors 2013-2022
+ * (c) NXP Semiconductors 2013-2023
  * Generated linker script file for LPC845
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.5.0 [Build 7232] [2022-01-11] on 7 sep. 2022 19:48:57
+ * MCUXpresso IDE v11.6.1 [Build 8255] [2022-10-03] on 2 feb. 2023 02:13:00
  */
 
 INCLUDE "Sine_generator_DAC_DMA_Debug_library.ld"
@@ -54,21 +54,6 @@ SECTIONS
        *(.text*)
        *(.rodata .rodata.* .constdata .constdata.*)
        . = ALIGN(4);
-    } > PROGRAM_FLASH
-    /*
-     * for exception handling/unwind - some Newlib functions (in common
-     * with C++ and STDC++) use this.
-     */
-    .ARM.extab : ALIGN(4)
-    {
-        *(.ARM.extab* .gnu.linkonce.armextab.*)
-    } > PROGRAM_FLASH
-
-    .ARM.exidx : ALIGN(4)
-    {
-        __exidx_start = .;
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-        __exidx_end = .;
     } > PROGRAM_FLASH
  
     _etext = .;
@@ -186,6 +171,22 @@ SECTIONS
        PROVIDE(__end_noinit_RAM = .) ;
        PROVIDE(__end_noinit_SRAM = .) ;        
     } > SRAM AT> SRAM
+
+    /*
+     * for exception handling/unwind - some Newlib functions (in common
+     * with C++ and STDC++) use this.
+     */
+    .ARM.extab : ALIGN(4)
+    {
+        *(.ARM.extab* .gnu.linkonce.armextab.*)
+    } > PROGRAM_FLASH
+
+    .ARM.exidx : ALIGN(4)
+    {
+        __exidx_start = .;
+        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+        __exidx_end = .;
+    } > PROGRAM_FLASH
 
     /* Reserve and place Heap within memory map */
     _HeapSize = 0x3f8;

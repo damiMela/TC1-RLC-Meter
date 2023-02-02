@@ -1,0 +1,10 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_clock.h:569:20:CLOCK_DisableClock	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_iocon.h:102:22:IOCON_PinMuxSet	24	static
+../board/pin_mux.c:32:6:BOARD_InitBootPins	8	static
+../board/pin_mux.c:61:6:BOARD_InitPins	8	static
+../board/pin_mux.c:121:6:BOARD_InitLEDsPins	32	static
+../board/pin_mux.c:219:6:BOARD_InitDEBUG_UARTPins	16	static
+../board/pin_mux.c:289:6:BOARD_InitSWD_DEBUGPins	24	static
+../board/pin_mux.c:373:6:BOARD_InitBUTTONsPins	16	static
+../board/pin_mux.c:431:6:BOARD_InitCAPTPins	24	static

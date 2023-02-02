@@ -1,0 +1,4 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
+../source/DAC_DMA_test.c:62:6:Callback_DMA0_CH0	24	static
+../source/DAC_DMA_test.c:69:5:main	8	static

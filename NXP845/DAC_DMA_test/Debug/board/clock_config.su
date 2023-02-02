@@ -1,0 +1,9 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_clock.h:580:20:CLOCK_Select	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_clock.h:612:20:CLOCK_SetCoreSysClkDiv	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_clock.h:836:20:CLOCK_SetFroOscFreq	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
+../board/clock_config.c:36:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:69:6:BOARD_BootClockFRO18M	8	static
+../board/clock_config.c:114:6:BOARD_BootClockFRO24M	8	static
+../board/clock_config.c:157:6:BOARD_BootClockFRO30M	8	static
+../board/clock_config.c:203:6:BOARD_BootClockPll24M	16	static

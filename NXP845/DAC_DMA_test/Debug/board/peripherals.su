@@ -1,0 +1,7 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_dma.h:420:20:DMA_EnableChannel	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_dac.h:124:20:DAC_EnableDMA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\DAC_DMA_test\drivers/fsl_dac.h:143:20:DAC_EnableCounter	16	static
+../board/peripherals.c:134:13:DMA0_init	8	static
+../board/peripherals.c:183:13:DAC0_init	8	static
+../board/peripherals.c:201:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:214:6:BOARD_InitBootPeripherals	8	static

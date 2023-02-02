@@ -1,0 +1,19 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_gpio.h:186:20:GPIO_PortSet	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_gpio.h:198:20:GPIO_PortClear	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:478:20:ADC_DoSoftwareTriggerConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:751:24:ADC_GetStatusFlags	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_adc.h:762:20:ADC_ClearStatusFlags	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_power.h:142:20:POWER_EnablePD	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
+../source/signalReader.c:17:6:signalReader_init	8	static
+../source/signalReader.c:21:6:signalReader_stop	8	static
+../source/signalReader.c:25:6:signalReader_update	8	static
+../source/signalReader.c:29:10:signalReader_readSample	16	static
+../source/signalReader.c:33:6:signalReader_sampleReady	8	static
+../source/signalReader.c:42:6:signalReader_setScale	24	static
+../source/signalReader.c:65:6:signalReader_resetScale	16	static
+../source/signalReader.c:78:6:signalReader_incrementScale	16	static
+../source/signalReader.c:88:10:signalReader_getCurrentScale	8	static
+../source/signalReader.c:93:6:signalReader_resetIndex	8	static
+../source/signalReader.c:97:10:signalReader_getPhaseFromIndex	40	static
+../source/signalReader.c:113:6:ADC0_SEQA_IRQHandler	40	static

@@ -1,0 +1,8 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_dma.h:420:20:DMA_EnableChannel	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:453:20:ADC_EnableConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:708:20:ADC_EnableInterrupts	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:731:20:ADC_EnableThresholdCompareInterrupt	24	static
+../board/peripherals.c:139:13:DMA0_init	8	static
+../board/peripherals.c:262:13:ADC0_init	8	static
+../board/peripherals.c:282:6:BOARD_InitPeripherals	8	static
+../board/peripherals.c:295:6:BOARD_InitBootPeripherals	8	static

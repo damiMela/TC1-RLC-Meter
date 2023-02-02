@@ -1,0 +1,7 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\CMSIS/core_cm0plus.h:741:22:__NVIC_EnableIRQ	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:478:20:ADC_DoSoftwareTriggerConvSeqA	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:494:20:ADC_EnableConvSeqABurstMode	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_adc.h:762:20:ADC_ClearStatusFlags	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\ADC_DMA_test\drivers/fsl_power.h:153:20:POWER_DisablePD	16	static
+../source/ADC_DMA_test.c:53:6:DMA0_CH0_Callback	24	static
+../source/ADC_DMA_test.c:66:5:main	8	static

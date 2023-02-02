@@ -1,0 +1,4 @@
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\CMSIS/core_cm0plus.h:850:22:__NVIC_SetPriority	24	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\CMSIS/core_cm0plus.h:1058:26:SysTick_Config	16	static
+C:\Users\Damian - PC\Documents\MCUXpressoIDE_11.6.1_8255\workspace\RLC_MeterV2\drivers/fsl_gpio.h:210:20:GPIO_PortToggle	24	static
+../source/RLC_Meter.c:70:5:main	104	static
