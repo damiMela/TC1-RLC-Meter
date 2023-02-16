@@ -4,7 +4,7 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
 			<provider class="org.eclipse.cdt.managedbuilder.language.settings.providers.GCCBuildCommandParser" id="com.crt.advproject.GCCBuildCommandParser" keep-relative-paths="false" name="MCU GCC Build Output Parser" parameter="(arm-none-eabi-gcc)|(arm-none-eabi-[gc]\+\+)|(gcc)|([gc]\+\+)|(clang)" prefer-non-shared="true"/>
-			<provider class="com.crt.advproject.specs.MCUGCCBuiltinSpecsDetector" console="false" env-hash="1185860032453554081" id="com.crt.advproject.GCCBuildSpecCompilerParser" keep-relative-paths="false" name="MCU GCC Built-in Compiler Parser" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+			<provider class="com.crt.advproject.specs.MCUGCCBuiltinSpecsDetector" console="false" env-hash="-1100550327385603459" id="com.crt.advproject.GCCBuildSpecCompilerParser" keep-relative-paths="false" name="MCU GCC Built-in Compiler Parser" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
 				<language-scope id="org.eclipse.cdt.core.gcc"/>
 				<language-scope id="org.eclipse.cdt.core.g++"/>
 			</provider>
@@ -15,7 +15,7 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
 			<provider copy-of="extension" id="com.crt.advproject.GCCBuildCommandParser"/>
-			<provider class="com.crt.advproject.specs.MCUGCCBuiltinSpecsDetector" console="false" env-hash="1239667149823567873" id="com.crt.advproject.GCCBuildSpecCompilerParser" keep-relative-paths="false" name="MCU GCC Built-in Compiler Parser" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+			<provider class="com.crt.advproject.specs.MCUGCCBuiltinSpecsDetector" console="false" env-hash="-1046743210015589667" id="com.crt.advproject.GCCBuildSpecCompilerParser" keep-relative-paths="false" name="MCU GCC Built-in Compiler Parser" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
 				<language-scope id="org.eclipse.cdt.core.gcc"/>
 				<language-scope id="org.eclipse.cdt.core.g++"/>
 			</provider>

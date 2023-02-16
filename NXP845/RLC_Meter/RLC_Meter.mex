@@ -71,8 +71,16 @@
                   </dependency>
                </dependencies>
                <pins>
-                  <pin peripheral="ADC0" signal="CH, 0" pin_num="33" pin_signal="PIO0_7/ADC_0"/>
-                  <pin peripheral="ADC0" signal="CH, 1" pin_num="34" pin_signal="PIO0_6/ADC_1/ACMPVREF"/>
+                  <pin peripheral="ADC0" signal="CH, 0" pin_num="33" pin_signal="PIO0_7/ADC_0">
+                     <pin_features>
+                        <pin_feature name="mode" value="inactive"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ADC0" signal="CH, 1" pin_num="34" pin_signal="PIO0_6/ADC_1/ACMPVREF">
+                     <pin_features>
+                        <pin_feature name="mode" value="inactive"/>
+                     </pin_features>
+                  </pin>
                   <pin peripheral="DAC0" signal="DACOUT0" pin_num="48" pin_signal="PIO0_17/ADC_9/DACOUT_0">
                      <pin_features>
                         <pin_feature name="dacmode" value="enabled"/>

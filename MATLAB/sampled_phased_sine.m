@@ -8,17 +8,19 @@ N = 100;    % samples per signal period
 Fs = N*f;  % samples per second
 dt = 1/Fs;   % seconds per sample (time increment)
 
-t = 0:dt:(2*dt*(N-1)); 
+t = 0:dt:(dt*(N-1)); 
 sineAmp = 512;
 sineDc = 512;
-phase = pi/7;
+
+phase_n = 70;
+phase = (phase_n*2*pi)/N;
+%phase = pi/5;
 
 C1 = sineAmp*sin(2*pi*f*t)+sineDc;
 C2 = sineAmp*sin(2*pi*f*t+phase)+sineDc;
 
 figure; plot(C1);
 hold on; plot(C2);
-
 %Get angle
 Cn = SEF(t,C2,1/f,2);
 phi1 = angle(Cn(2))*180/pi+90
@@ -48,8 +50,12 @@ for j= 0:(N-1)
 end
 
 delta_n = max_pos-min_pos;
-index = delta_n-ceil(N/4);
-ph3 = -((index*360)/(N-1))
+index = delta_n-ceil(N/4)+49;
+ph3 = -((index*360)/(N-1))+180;
+if index >= 49 
+    ph3 = ph3+360;
+end
+ph3
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

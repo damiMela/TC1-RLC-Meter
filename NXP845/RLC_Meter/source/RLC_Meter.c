@@ -53,6 +53,7 @@
 
 #define CURRENT_RES	560
 
+#define CYCLE_MEAS 5
 
 typedef enum _state{
 	INIT,
@@ -95,8 +96,9 @@ int main(void) {
 
    uint16_t signalMaxVal[2] = {0};
    uint16_t signalCurrVal[2] = {0};
-   uint8_t 	signalMaxValPhase = 0;
-
+   uint16_t signalMaxValPhase = 0;
+   uint16_t signalPhase[CYCLE_MEAS] = {0};
+   uint8_t currCycle = 0;
 
     while(1) {
     	signalReader_update();
@@ -125,7 +127,7 @@ int main(void) {
 				uartCmd = 0;
 				sineGenerator_init();
 				sineGenerator_resetCycleCount();
-				//s = MEASURE;
+				s = MEASURE;
 			}
 			break;
 /*
@@ -138,7 +140,12 @@ int main(void) {
 			break;
 */
 		case MEASURE:
-			if(sineGenerator_getCycleCount() < 20){
+			if(sineGenerator_getCycleCount() < CYCLE_MEAS){
+				if(sineGenerator_getCycleCount() != currCycle){
+					currCycle++;
+					signalMaxVal[0] = 0;
+					signalMaxVal[1] = 0;
+				}
 				signalCurrVal[0] = signalReader_readSample(SIGNAL1);
 				signalCurrVal[1] = signalReader_readSample(SIGNAL2);
 
@@ -147,11 +154,12 @@ int main(void) {
 				}
 				if(signalMaxVal[1] < signalCurrVal[1]){
 					signalMaxVal[1]= signalCurrVal[1];
-					signalMaxValPhase = sineGenerator_getPhase();
+					signalPhase[sineGenerator_getCycleCount()] = sineGenerator_getPhase();
 				}
 			}
 			else{
 				sineGenerator_stop();
+
 				if(signalMaxVal[1] < ADC_MAX_VAL){
 					signalReader_incrementScale(true);
 					sineGenerator_init();
@@ -165,8 +173,13 @@ int main(void) {
 			break;
 
 		case PROCESS:
+			for(int i = 0; i <CYCLE_MEAS; i++){
+				signalMaxValPhase += signalPhase[i];
+			}
+			signalMaxValPhase/=CYCLE_MEAS;
+
 			module = abs((signalMaxVal[0]- (signalMaxVal[1])/signalReader_getCurrentScale()))/CURRENT_RES;
-			realVal = module * cosf(signalMaxValPhase);
+			realVal = abs(module * cosf(signalMaxValPhase));
 			imgVal = module * sinf(signalMaxValPhase);
 
 			sprintf(outputText, "Z = %d+j%d",realVal, imgVal);

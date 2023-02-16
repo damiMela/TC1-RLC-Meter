@@ -38,6 +38,20 @@ void BOARD_InitBootPins(void);
 /*!
  * @brief DAC mode enable.: Enable. */
 #define PIO0_17_DACMODE_ENABLE 0x01u
+/*!
+ * @brief
+ * Selects function mode (on-chip pull-up/pull-down resistor control).
+ * : Inactive.
+ * Inactive (no pull-down/pull-up resistor enabled).
+ */
+#define PIO0_6_MODE_INACTIVE 0x00u
+/*!
+ * @brief
+ * Selects function mode (on-chip pull-up/pull-down resistor control).
+ * : Inactive.
+ * Inactive (no pull-down/pull-up resistor enabled).
+ */
+#define PIO0_7_MODE_INACTIVE 0x00u
 
 /*! @name PIO0_14 (number 37), CN1[27]/PIO0_14/ACMP_I3/ADC_2
   @{ */

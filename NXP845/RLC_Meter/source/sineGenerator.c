@@ -53,6 +53,7 @@ void sineGenerator_init(void)
 void sineGenerator_stop(){
 	POWER_EnablePD(kPDRUNCFG_PD_DAC0);
 	cycleCounter=0;
+	index = 0;
 }
 
 void sineGenerator_send(uint32_t value)
@@ -66,13 +67,18 @@ void sineGenerator_freq(uint32_t value)
 	DAC_SetCounterValue(DAC0, value*30);
 }
 
-uint8_t sineGenerator_getPhase(){
-	int n = index-ceil(SINE_RESOLUTION/4);
-	int deg = 0;
-	n = n<0 ? n+SINE_RESOLUTION : n;
+uint8_t sineGenerator_getIndex(){
+	return index;
+}
 
-	deg =((n*360)/(SINE_RESOLUTION-1));
-	return deg>180 ? deg-360 : deg;
+uint16_t sineGenerator_getPhase(){
+	int8_t n = index-ceil(SINE_RESOLUTION/4)+49;
+
+	int16_t deg =-((n*360)/(SINE_RESOLUTION-1))+180;
+	if(n >= 49)
+		deg +=360;
+
+	return deg;
 }
 
 uint8_t sineGenerator_getCycleCount(){
@@ -85,10 +91,10 @@ void sineGenerator_resetCycleCount(){
 
 /* DAC0_IRQn interrupt handler */
 void DAC0_IRQHandler(void) {
-	int n = 0;
+	int n = 70;
 
-	if(index <(SINE_RESOLUTION-n))	sineGenerator_send(SinusOutputData[index+n]);
-	else	sineGenerator_send(SinusOutputData[index-(SINE_RESOLUTION-n)]);
+	if((index+n) <SINE_RESOLUTION)	sineGenerator_send(SinusOutputData[index+n]);
+	else	sineGenerator_send(SinusOutputData[index+n-SINE_RESOLUTION]);
 
 	index++;
 

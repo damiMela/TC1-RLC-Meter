@@ -53,8 +53,8 @@ void BOARD_InitBootPins(void)
 BOARD_InitPins:
 - options: {callFromInitBoot: 'true', coreID: core0, enableClock: 'true'}
 - pin_list:
-  - {pin_num: '33', peripheral: ADC0, signal: 'CH, 0', pin_signal: PIO0_7/ADC_0}
-  - {pin_num: '34', peripheral: ADC0, signal: 'CH, 1', pin_signal: PIO0_6/ADC_1/ACMPVREF}
+  - {pin_num: '33', peripheral: ADC0, signal: 'CH, 0', pin_signal: PIO0_7/ADC_0, mode: inactive}
+  - {pin_num: '34', peripheral: ADC0, signal: 'CH, 1', pin_signal: PIO0_6/ADC_1/ACMPVREF, mode: inactive}
   - {pin_num: '48', peripheral: DAC0, signal: DACOUT0, pin_signal: PIO0_17/ADC_9/DACOUT_0, dacmode: enabled}
   - {pin_num: '37', peripheral: GPIO, signal: 'PIO0, 14', pin_signal: PIO0_14/ACMP_I3/ADC_2, identifier: POT_UD, direction: OUTPUT, gpio_init_state: 'true'}
   - {pin_num: '2', peripheral: GPIO, signal: 'PIO0, 13', pin_signal: PIO0_13/ADC_10, identifier: POT_INC, direction: OUTPUT, mode: pullDown}
@@ -121,6 +121,22 @@ void BOARD_InitPins(void)
 
                      /* DAC mode enable.: Enable. */
                      | IOCON_PIO_DACMODE(PIO0_17_DACMODE_ENABLE));
+
+    IOCON->PIO[16] = ((IOCON->PIO[16] &
+                       /* Mask bits to zero which are setting */
+                       (~(IOCON_PIO_MODE_MASK)))
+
+                      /* Selects function mode (on-chip pull-up/pull-down resistor control).: Inactive. Inactive (no
+                       * pull-down/pull-up resistor enabled). */
+                      | IOCON_PIO_MODE(PIO0_6_MODE_INACTIVE));
+
+    IOCON->PIO[15] = ((IOCON->PIO[15] &
+                       /* Mask bits to zero which are setting */
+                       (~(IOCON_PIO_MODE_MASK)))
+
+                      /* Selects function mode (on-chip pull-up/pull-down resistor control).: Inactive. Inactive (no
+                       * pull-down/pull-up resistor enabled). */
+                      | IOCON_PIO_MODE(PIO0_7_MODE_INACTIVE));
 
     /* ADC_CHN0 connect to P0_7 */
     SWM_SetFixedPinSelect(SWM0, kSWM_ADC_CHN0, true);

@@ -17,7 +17,7 @@
 
 #define DAC_HALF_VALUE	512U
 #define SINE_AMPLITUDE	480U
-#define SINE_RESOLUTION	5
+#define SINE_RESOLUTION	100
 
 #define SECONDS_TO_DAC_VAL(x)	(int)(1000000*x*30)
 
@@ -29,7 +29,8 @@ void sineGenerator_stop(void);
 void sineGenerator_send(uint32_t value);
 void sineGenerator_freq(uint32_t value);
 void sineGenerator_resetCycleCount();
-uint8_t sineGenerator_getPhase();
+uint8_t sineGenerator_getIndex();
+uint16_t sineGenerator_getPhase();
 uint8_t sineGenerator_getCycleCount();
 void DAC0_IRQHANDLER(void);
 
